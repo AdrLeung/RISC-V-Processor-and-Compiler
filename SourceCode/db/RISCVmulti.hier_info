@@ -1,0 +1,71 @@
+|BLAN
+P[0] => P_in_half[0].IN0
+P[1] => P_in_half[0].IN1
+P[1] => G_in_half.IN0
+P[2] => P_in_half[1].IN0
+P[3] => P_in_half[1].IN1
+P[3] => G_in_half.IN0
+P[4] => P_in_half[2].IN0
+P[5] => P_in_half[2].IN1
+P[5] => G_in_half.IN0
+P[6] => P_in_half[3].IN0
+P[7] => P_in_half[3].IN1
+P[7] => G_in_half.IN0
+G[0] => G_in_half.IN1
+G[1] => G_in_half[0].IN1
+G[2] => G_in_half.IN1
+G[3] => G_in_half[1].IN1
+G[4] => G_in_half.IN1
+G[5] => G_in_half[2].IN1
+G[6] => G_in_half.IN1
+G[7] => G_in_half[3].IN1
+P_out[0] <= P_out[0].DB_MAX_OUTPUT_PORT_TYPE
+P_out[1] <= P_out[1].DB_MAX_OUTPUT_PORT_TYPE
+P_out[2] <= P_out[2].DB_MAX_OUTPUT_PORT_TYPE
+P_out[3] <= P_out[3].DB_MAX_OUTPUT_PORT_TYPE
+P_out[4] <= P_out[4].DB_MAX_OUTPUT_PORT_TYPE
+P_out[5] <= P_out[5].DB_MAX_OUTPUT_PORT_TYPE
+P_out[6] <= P_out[6].DB_MAX_OUTPUT_PORT_TYPE
+P_out[7] <= P_out[7].DB_MAX_OUTPUT_PORT_TYPE
+G_out[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+G_out[1] <= G_out[1].DB_MAX_OUTPUT_PORT_TYPE
+G_out[2] <= G_out[2].DB_MAX_OUTPUT_PORT_TYPE
+G_out[3] <= G_out[3].DB_MAX_OUTPUT_PORT_TYPE
+G_out[4] <= G_out[4].DB_MAX_OUTPUT_PORT_TYPE
+G_out[5] <= G_out[5].DB_MAX_OUTPUT_PORT_TYPE
+G_out[6] <= G_out[6].DB_MAX_OUTPUT_PORT_TYPE
+G_out[7] <= G_out[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BLAN|BLAN:\recurse:inner
+P[0] => P_in_half[0].IN0
+P[1] => P_in_half[0].IN1
+P[1] => G_in_half.IN0
+P[2] => P_in_half[1].IN0
+P[3] => P_in_half[1].IN1
+P[3] => G_in_half.IN0
+G[0] => G_in_half.IN1
+G[1] => G_in_half[0].IN1
+G[2] => G_in_half.IN1
+G[3] => G_in_half[1].IN1
+P_out[0] <= P_out[0].DB_MAX_OUTPUT_PORT_TYPE
+P_out[1] <= P_out[1].DB_MAX_OUTPUT_PORT_TYPE
+P_out[2] <= P_out[2].DB_MAX_OUTPUT_PORT_TYPE
+P_out[3] <= P_out[3].DB_MAX_OUTPUT_PORT_TYPE
+G_out[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+G_out[1] <= G_out[1].DB_MAX_OUTPUT_PORT_TYPE
+G_out[2] <= G_out[2].DB_MAX_OUTPUT_PORT_TYPE
+G_out[3] <= G_out[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BLAN|BLAN:\recurse:inner|BLAN:\recurse:inner
+P[0] => ~NO_FANOUT~
+P[1] => ~NO_FANOUT~
+G[0] => ~NO_FANOUT~
+G[1] => ~NO_FANOUT~
+P_out[0] <= P_out[0].DB_MAX_OUTPUT_PORT_TYPE
+P_out[1] <= P_out[1].DB_MAX_OUTPUT_PORT_TYPE
+G_out[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+G_out[1] <= G_out[1].DB_MAX_OUTPUT_PORT_TYPE
+
+
