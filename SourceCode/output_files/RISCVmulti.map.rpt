@@ -1,5 +1,5 @@
 Analysis & Synthesis report for RISCVmulti
-Mon Apr 27 14:35:55 2026
+Sun May 03 19:30:36 2026
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -14,14 +14,11 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Parameter Settings for User Entity Instance: Top-level Entity: |BLAN
- 10. Parameter Settings for User Entity Instance: BLAN:\recurse:inner
- 11. Parameter Settings for User Entity Instance: BLAN:\recurse:inner|BLAN:\recurse:inner
- 12. Port Connectivity Checks: "BLAN:\recurse:inner|BLAN:\recurse:inner"
- 13. Port Connectivity Checks: "BLAN:\recurse:inner"
- 14. Post-Synthesis Netlist Statistics for Top Partition
- 15. Elapsed Time Per Partition
- 16. Analysis & Synthesis Messages
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for User Entity Instance: Top-level Entity: |LogicUnit
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -48,16 +45,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Apr 27 14:35:54 2026       ;
+; Analysis & Synthesis Status        ; Successful - Sun May 03 19:30:36 2026       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; RISCVmulti                                  ;
-; Top-level Entity Name              ; BLAN                                        ;
+; Top-level Entity Name              ; LogicUnit                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 0                                           ;
-;     Total combinational functions  ; 0                                           ;
+; Total logic elements               ; 64                                          ;
+;     Total combinational functions  ; 64                                          ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
-; Total pins                         ; 32                                          ;
+; Total pins                         ; 194                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -71,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                            ; BLAN               ; RISCVmulti         ;
+; Top-level entity name                                            ; LogicUnit          ; RISCVmulti         ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; VHDL Show LMF Mapping Messages                                   ; Off                ;                    ;
 ; VHDL Version                                                     ; VHDL_2008          ; VHDL_1993          ;
@@ -168,44 +165,45 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                         ; Library ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------+---------+
-; BLAN.vhd                         ; yes             ; User VHDL File  ; C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd ;         ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                     ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                              ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+---------+
+; LogicUnit.vhd                    ; yes             ; User VHDL File  ; C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/LogicUnit.vhd ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-;                                             ;       ;
-; Total combinational functions               ; 0     ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 0     ;
-;     -- 3 input functions                    ; 0     ;
-;     -- <=2 input functions                  ; 0     ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 0     ;
-;     -- arithmetic mode                      ; 0     ;
-;                                             ;       ;
-; Total registers                             ; 0     ;
-;     -- Dedicated logic registers            ; 0     ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 32    ;
-;                                             ;       ;
-; Embedded Multiplier 9-bit elements          ; 0     ;
-;                                             ;       ;
-; Maximum fan-out node                        ; P[0]  ;
-; Maximum fan-out                             ; 1     ;
-; Total fan-out                               ; 32    ;
-; Average fan-out                             ; 0.50  ;
-+---------------------------------------------+-------+
++----------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                    ;
++---------------------------------------------+------------------+
+; Resource                                    ; Usage            ;
++---------------------------------------------+------------------+
+; Estimated Total logic elements              ; 64               ;
+;                                             ;                  ;
+; Total combinational functions               ; 64               ;
+; Logic element usage by number of LUT inputs ;                  ;
+;     -- 4 input functions                    ; 64               ;
+;     -- 3 input functions                    ; 0                ;
+;     -- <=2 input functions                  ; 0                ;
+;                                             ;                  ;
+; Logic elements by mode                      ;                  ;
+;     -- normal mode                          ; 64               ;
+;     -- arithmetic mode                      ; 0                ;
+;                                             ;                  ;
+; Total registers                             ; 0                ;
+;     -- Dedicated logic registers            ; 0                ;
+;     -- I/O registers                        ; 0                ;
+;                                             ;                  ;
+; I/O pins                                    ; 194              ;
+;                                             ;                  ;
+; Embedded Multiplier 9-bit elements          ; 0                ;
+;                                             ;                  ;
+; Maximum fan-out node                        ; LogicFN[0]~input ;
+; Maximum fan-out                             ; 64               ;
+; Total fan-out                               ; 514              ;
+; Average fan-out                             ; 1.14             ;
++---------------------------------------------+------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -213,7 +211,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |BLAN                      ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 32   ; 0            ; |BLAN               ; BLAN        ; work         ;
+; |LogicUnit                 ; 64 (64)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 194  ; 0            ; |LogicUnit          ; LogicUnit   ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -233,54 +231,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |BLAN ;
-+----------------+-------+---------------------------------------------+
-; Parameter Name ; Value ; Type                                        ;
-+----------------+-------+---------------------------------------------+
-; N              ; 8     ; Signed Integer                              ;
-+----------------+-------+---------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 4:1                ; 64 bits   ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; No         ; |LogicUnit|Mux63           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |LogicUnit ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; N              ; 64    ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: BLAN:\recurse:inner ;
-+----------------+-------+-----------------------------------------+
-; Parameter Name ; Value ; Type                                    ;
-+----------------+-------+-----------------------------------------+
-; n              ; 4     ; Signed Integer                          ;
-+----------------+-------+-----------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: BLAN:\recurse:inner|BLAN:\recurse:inner ;
-+----------------+-------+-------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                        ;
-+----------------+-------+-------------------------------------------------------------+
-; n              ; 2     ; Signed Integer                                              ;
-+----------------+-------+-------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "BLAN:\recurse:inner|BLAN:\recurse:inner"                                             ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; Port  ; Type   ; Severity ; Details                                                                             ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; p_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; g_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "BLAN:\recurse:inner"                                                                 ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; Port  ; Type   ; Severity ; Details                                                                             ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; p_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; g_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -288,13 +255,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 32                          ;
-; cycloneiii_lcell_comb ; 1                           ;
-;     normal            ; 1                           ;
-;         0 data inputs ; 1                           ;
+; boundary_port         ; 194                         ;
+; cycloneiii_lcell_comb ; 64                          ;
+;     normal            ; 64                          ;
+;         4 data inputs ; 64                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 0.00                        ;
-; Average LUT depth     ; 0.00                        ;
+; Max LUT depth         ; 1.00                        ;
+; Average LUT depth     ; 1.00                        ;
 +-----------------------+-----------------------------+
 
 
@@ -313,72 +280,34 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Mon Apr 27 14:35:48 2026
+    Info: Processing started: Sun May 03 19:30:30 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RISCVmulti -c RISCVmulti
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file brentkungadder.vhd
-    Info (12022): Found design unit 1: BrentKungAdder-structural File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BrentKungAdder.vhd Line: 16
+    Info (12022): Found design unit 1: BrentKungAdder-structural File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BrentKungAdder.vhd Line: 20
     Info (12023): Found entity 1: BrentKungAdder File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BrentKungAdder.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file blan.vhd
     Info (12022): Found design unit 1: BLAN-structural File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 13
     Info (12023): Found entity 1: BLAN File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 5
-Info (12127): Elaborating entity "BLAN" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at BLAN.vhd(9): used implicit default value for signal "P_out" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 9
-Warning (10541): VHDL Signal Declaration warning at BLAN.vhd(9): used implicit default value for signal "G_out" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 9
-Warning (10036): Verilog HDL or VHDL warning at BLAN.vhd(16): object "P_out_half" assigned a value but never read File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 16
-Warning (10036): Verilog HDL or VHDL warning at BLAN.vhd(17): object "G_out_half" assigned a value but never read File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 17
-Info (12128): Elaborating entity "BLAN" for hierarchy "BLAN:\recurse:inner" File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 28
-Warning (10541): VHDL Signal Declaration warning at BLAN.vhd(9): used implicit default value for signal "P_out" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 9
-Warning (10541): VHDL Signal Declaration warning at BLAN.vhd(9): used implicit default value for signal "G_out" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 9
-Warning (10036): Verilog HDL or VHDL warning at BLAN.vhd(16): object "P_out_half" assigned a value but never read File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 16
-Warning (10036): Verilog HDL or VHDL warning at BLAN.vhd(17): object "G_out_half" assigned a value but never read File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 17
-Info (12128): Elaborating entity "BLAN" for hierarchy "BLAN:\recurse:inner|BLAN:\recurse:inner" File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 28
-Warning (10541): VHDL Signal Declaration warning at BLAN.vhd(9): used implicit default value for signal "P_out" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 9
-Warning (10541): VHDL Signal Declaration warning at BLAN.vhd(9): used implicit default value for signal "G_out" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 9
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "P_out[0]" is stuck at GND File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 9
-    Warning (13410): Pin "P_out[1]" is stuck at GND File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 9
-    Warning (13410): Pin "P_out[2]" is stuck at GND File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 9
-    Warning (13410): Pin "P_out[3]" is stuck at GND File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 9
-    Warning (13410): Pin "P_out[4]" is stuck at GND File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 9
-    Warning (13410): Pin "P_out[5]" is stuck at GND File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 9
-    Warning (13410): Pin "P_out[6]" is stuck at GND File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 9
-    Warning (13410): Pin "P_out[7]" is stuck at GND File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 9
-    Warning (13410): Pin "G_out[0]" is stuck at GND File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 9
-    Warning (13410): Pin "G_out[1]" is stuck at GND File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 9
-    Warning (13410): Pin "G_out[2]" is stuck at GND File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 9
-    Warning (13410): Pin "G_out[3]" is stuck at GND File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 9
-    Warning (13410): Pin "G_out[4]" is stuck at GND File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 9
-    Warning (13410): Pin "G_out[5]" is stuck at GND File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 9
-    Warning (13410): Pin "G_out[6]" is stuck at GND File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 9
-    Warning (13410): Pin "G_out[7]" is stuck at GND File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file logicunit.vhd
+    Info (12022): Found design unit 1: LogicUnit-rtl File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/LogicUnit.vhd Line: 16
+    Info (12023): Found entity 1: LogicUnit File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/LogicUnit.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file shiftunit.vhd
+    Info (12022): Found design unit 1: ShiftUnit-rtl File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/ShiftUnit.vhd Line: 18
+    Info (12023): Found entity 1: ShiftUnit File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/ShiftUnit.vhd Line: 7
+Info (12127): Elaborating entity "LogicUnit" for the top level hierarchy
+Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 16 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "P[0]" File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 8
-    Warning (15610): No output dependent on input pin "P[1]" File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 8
-    Warning (15610): No output dependent on input pin "P[2]" File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 8
-    Warning (15610): No output dependent on input pin "P[3]" File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 8
-    Warning (15610): No output dependent on input pin "P[4]" File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 8
-    Warning (15610): No output dependent on input pin "P[5]" File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 8
-    Warning (15610): No output dependent on input pin "P[6]" File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 8
-    Warning (15610): No output dependent on input pin "P[7]" File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 8
-    Warning (15610): No output dependent on input pin "G[0]" File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 8
-    Warning (15610): No output dependent on input pin "G[1]" File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 8
-    Warning (15610): No output dependent on input pin "G[2]" File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 8
-    Warning (15610): No output dependent on input pin "G[3]" File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 8
-    Warning (15610): No output dependent on input pin "G[4]" File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 8
-    Warning (15610): No output dependent on input pin "G[5]" File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 8
-    Warning (15610): No output dependent on input pin "G[6]" File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 8
-    Warning (15610): No output dependent on input pin "G[7]" File: C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/SourceCode/BLAN.vhd Line: 8
-Info (21057): Implemented 32 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 16 input pins
-    Info (21059): Implemented 16 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 45 warnings
-    Info: Peak virtual memory: 4796 megabytes
-    Info: Processing ended: Mon Apr 27 14:35:55 2026
-    Info: Elapsed time: 00:00:07
+Info (21057): Implemented 258 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 130 input pins
+    Info (21059): Implemented 64 output pins
+    Info (21061): Implemented 64 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4804 megabytes
+    Info: Processing ended: Sun May 03 19:30:36 2026
+    Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:14
 
 

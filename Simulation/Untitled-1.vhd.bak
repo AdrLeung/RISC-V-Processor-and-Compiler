@@ -1,0 +1,181 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use std.textio.all;
+use ieee.std_logic_textio.all;
+use ieee.numeric_std.all;
+
+entity TBAdder is 
+   generic(
+       N: natural := 64;
+       TestVectorFile: string := "TestVectors/Adder00.tvs";
+       PreStimTime : time := 1 ns;
+       StableTime: time := 10 ns
+
+    );
+
+end entity TBAdder;
+
+
+
+architecture Test of TBAdder is 
+   component BrentKungAdder is
+	generic (N : natural := 64);
+    	port (
+        A, B : in  std_logic_vector(N-1 downto 0);
+        Cin  : in  std_logic;
+        S    : out std_logic_vector(N-1 downto 0);
+        Cout : out std_logic;
+    );
+   end component BrentKungAdder;
+
+    signal TBA, TBB : std_logic_vector(N-1 downto 0) := (others => 'X');
+    signal TBS      : std_logic_vector(N-1 downto 0);
+    signal TBCin    : std_logic := 'X';
+    signal TBCout   : std_logic;
+
+    signal DUTout_S      : std_logic_vector(N-1 downto 0);
+    
+    signal MeasurementIndex    : integer := 0;
+    signal tpd_S_ps            : integer := 0; -- tpd to S settling, in ps
+    signal tpd_Cout_ps       : integer := 0; -- tpd to Cout settling, ps
+    signal worst_tpd_S_ps      : integer := 0; -- running worst case for S
+    signal worst_tpd_Cout_ps : integer := 0; -- running worst case for Cout
+
+begin
+   DUT : component Adder
+	generic map (N => N)
+	port map (
+	    A     => TBA,
+            B     => TBB,
+            S     => TBS,
+	    Cin   => TBCin,
+            Cout  => TBCout
+
+        );
+
+    DUTout_S <= TBS;
+
+ STIM : process
+        file     VectorFile : text;
+        variable LineBuffer : line;
+        variable FileIndex  : integer := 0;
+
+        variable Avar     : std_logic_vector(N-1 downto 0);
+        variable Bvar     : std_logic_vector(N-1 downto 0);
+        variable STrue    : std_logic_vector(N-1 downto 0);
+        variable CinVar   : std_logic;
+        variable CoutTrue : std_logic;
+
+        variable StartTime    : time;
+        variable EndTime      : time;
+        variable PropDelay_S  : time;
+        variable PropDelay_Cout : time;
+
+        variable v_worst_S  : integer := 0;
+        variable v_worst_Cout : integer := 0;
+
+        variable pass_fail : string(1 to 7);
+
+
+	begin
+
+        -- Open test vector file
+        file_open(VectorFile, TestVectorFile, read_mode);
+        report "TBAdder: starting simulation. Vectors: " & TestVectorFile
+            severity note;
+
+        while not endfile(VectorFile) loop
+            FileIndex        := FileIndex + 1;
+            MeasurementIndex <= FileIndex;
+
+            readline(VectorFile, LineBuffer);
+            hread(LineBuffer, Avar);
+            hread(LineBuffer, Bvar);
+            read (LineBuffer, CinVar);
+            hread(LineBuffer, STrue);
+            read (LineBuffer, CoutTrue);
+           
+            TBA   <= (others => 'X');
+            TBB   <= (others => 'X');
+            TBCin <= 'X';
+            wait for PreStimTime;
+
+            TBA      <= Avar;
+            TBB      <= Bvar;
+            TBCin    <= CinVar;
+            StartTime := now;
+      wait until DUTout_S'Quiet(StableTime) for 100 ns; 
+	 if not DUTout_S'Quiet(StableTime) then
+    		report "WARNING: Sum signal never went quiet!" severity warning;
+	 end if;
+         EndTime      := now;
+         PropDelay_S  := (EndTime - StartTime) - DUTout_S'Last_Event;
+
+	tpd_S_ps <= PropDelay_S / 1 ns;
+
+       wait until TBCout'Quiet(StableTime) for 100 ns;
+	    if not TBCout'Quiet(StableTime) then
+    		report "WARNING: Status signal never went quiet!" severity warning;
+	    end if;
+            EndTime      := now;
+            PropDelay_Cout := (EndTime - StartTime) - TBCout'Last_Event;
+
+            tpd_Status_ps <= PropDelay_St / 1 ns;
+
+            if (TBS = STrue and TBCout = CoutTrue and TBOvfl = OvflTrue) then
+                pass_fail := "SUCCESS";
+            else
+                pass_fail := "FAILURE";
+            end if;
+
+            report "Idx="  & integer'image(FileIndex)        &
+                   " ["    & pass_fail & "]"                 &
+                   " A="   & to_hstring(Avar)                &
+                   " B="   & to_hstring(Bvar)                &
+                   " Cin=" & std_logic'image(CinVar)         &
+                   " | Exp: S="   & to_hstring(STrue)        &
+                   " Co="         & std_logic'image(CoutTrue) &
+                   " Ov="         & std_logic'image(OvflTrue) &
+                   " | Act: S="   & to_hstring(TBS)          &
+                   " Co="         & std_logic'image(TBCout)  &
+                   " Ov="         & std_logic'image(TBOvfl)  &
+                   " | tpd_S="    & time'image(PropDelay_S)  &
+                   " tpd_St="     & time'image(PropDelay_St)
+                severity note;
+
+            -- Extra warning on failure so it is immediately visible
+            if pass_fail = "FAILURE" then
+                report "*** MISMATCH idx=" & integer'image(FileIndex)  &
+                       " ExpS="  & to_hstring(STrue)                   &
+                       " ActS="  & to_hstring(TBS)                     &
+                       " ExpCo=" & std_logic'image(CoutTrue)           &
+                       " ActCo=" & std_logic'image(TBCout)             &
+                       " ExpOv=" & std_logic'image(OvflTrue)           &
+                       " ActOv=" & std_logic'image(TBOvfl)
+                    severity warning;
+            end if;
+
+            if (PropDelay_S / 1 ps) > v_worst_S then
+                v_worst_S      := PropDelay_S / 1  ps;
+                worst_tpd_S_ps <= v_worst_S;
+            end if;
+
+            if (PropDelay_St / 1 ps) > v_worst_St then
+                v_worst_St          := PropDelay_St / 1 ps;
+                worst_tpd_Status_ps <= v_worst_St;
+            end if;
+
+        end loop; -- end of test vector loop
+        report "====================================================" severity note;
+        report "TBAdder: all " & integer'image(FileIndex) &
+               " vectors processed." severity note;
+        report "Worst-case tpd_S      = " & integer'image(v_worst_S) & "ps" severity note;
+        report "Worst-case tpd_Status = " & integer'image(v_worst_St) & "ps" severity note;
+        report "====================================================" severity note;
+
+        file_close(VectorFile);
+        wait; -- halt simulation
+
+    end process STIM;
+
+end architecture Test;

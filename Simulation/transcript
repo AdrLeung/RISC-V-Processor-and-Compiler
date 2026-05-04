@@ -1,0 +1,10 @@
+do run.do
+# ** Error: can't set "::PrefMain(file)": couldn't open "../Documentation/OutputFiles/TS_RISCVmulti_BrentKung_Transcript.txt": no such file or directory
+# Error in macro ./run.do line 9
+# couldn't open "../Documentation/OutputFiles/TS_RISCVmulti_BrentKung_Transcript.txt": no such file or directory
+#     while executing
+# "Transcript::open_file ::PrefMain file w"
+#     (write trace on "::PrefMain(file)")
+#     invoked from within
+# "transcript file "../Documentation/OutputFiles/TS_RISCVmulti_BrentKung_Transcript.txt""
+do run.do

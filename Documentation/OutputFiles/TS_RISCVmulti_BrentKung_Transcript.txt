@@ -1,0 +1,116 @@
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity BLAN
+# -- Compiling architecture structural of BLAN
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity BrentKungAdder
+# -- Compiling architecture structural of BrentKungAdder
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneive_atom_pack
+# -- Loading package cycloneive_components
+# -- Compiling entity hard_block
+# -- Compiling architecture structure of hard_block
+# -- Compiling entity BrentKungAdder
+# -- Compiling architecture structure of BrentKungAdder
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Compiling entity TBAdder
+# -- Compiling architecture Test of TBAdder
+# vsim -t 1ps -voptargs=""+acc"" -sdftyp "/TBAdder/DUT=../SourceCode/simulation/modelsim/RISCVmulti_vhd.sdo" work.TBAdder 
+# Start time: 01:27:29 on Apr 30,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_textio(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tbadder(test)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading cycloneive.cycloneive_atom_pack(body)
+# Loading cycloneive.cycloneive_components
+# Loading work.brentkungadder(structure)
+# ** Warning: (vsim-8713) Suspect default binding for component instance 'DUT'.
+# Entity has no generics at all; the component has generic:
+#           N
+#    Time: 0 ps  Iteration: 0  Instance: /tbadder/DUT File: ./TBBrentKung.vhd Line: 54
+# Loading work.hard_block(structure)
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneive.cycloneive_io_obuf(arch)
+# Loading cycloneive.cycloneive_io_ibuf(arch)
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)
+# Loading instances from ../SourceCode/simulation/modelsim/RISCVmulti_vhd.sdo
+# Loading timing data from ../SourceCode/simulation/modelsim/RISCVmulti_vhd.sdo
+# ** Warning: Design size of 43672 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Instance: /tbadder File: ./TBBrentKung.vhd
+# ** Note: TBAdder: starting simulation. Vectors: TestVectors/Adder00.tvs
+#    Time: 0 ps  Iteration: 0  Instance: /tbadder
+# ** Note: Idx=1 [SUCCESS] A=0000000000000000 B=0000000000000000 Cin='0' | Exp: S=0000000000000000 Co='0' | Act: S=0000000000000000 Co='0' | tpd_S=17698 ps tpd_Co=9565 ps
+#    Time: 128698 ps  Iteration: 0  Instance: /tbadder
+# ** Note: Idx=2 [SUCCESS] A=0000000000000000 B=0000000000000000 Cin='1' | Exp: S=0000000000000001 Co='0' | Act: S=0000000000000001 Co='0' | tpd_S=16418 ps tpd_Co=9565 ps
+#    Time: 256116 ps  Iteration: 0  Instance: /tbadder
+# ** Note: Idx=3 [SUCCESS] A=0000000000000001 B=0000000000000001 Cin='0' | Exp: S=0000000000000002 Co='0' | Act: S=0000000000000002 Co='0' | tpd_S=16418 ps tpd_Co=9565 ps
+#    Time: 383534 ps  Iteration: 0  Instance: /tbadder
+# ** Note: Idx=4 [SUCCESS] A=0000000000000001 B=0000000000000001 Cin='1' | Exp: S=0000000000000003 Co='0' | Act: S=0000000000000003 Co='0' | tpd_S=16418 ps tpd_Co=9565 ps
+#    Time: 510952 ps  Iteration: 0  Instance: /tbadder
+# ** Note: Idx=5 [SUCCESS] A=000000000000000F B=0000000000000001 Cin='0' | Exp: S=0000000000000010 Co='0' | Act: S=0000000000000010 Co='0' | tpd_S=16418 ps tpd_Co=9565 ps
+#    Time: 638370 ps  Iteration: 0  Instance: /tbadder
+# ** Note: Idx=6 [SUCCESS] A=0000000000000055 B=000000000000002A Cin='0' | Exp: S=000000000000007F Co='0' | Act: S=000000000000007F Co='0' | tpd_S=16418 ps tpd_Co=9565 ps
+#    Time: 765788 ps  Iteration: 0  Instance: /tbadder
+# ** Note: Idx=7 [SUCCESS] A=000000000000007F B=0000000000000000 Cin='1' | Exp: S=0000000000000080 Co='0' | Act: S=0000000000000080 Co='0' | tpd_S=16418 ps tpd_Co=9565 ps
+#    Time: 893206 ps  Iteration: 0  Instance: /tbadder
+# ** Note: Idx=8 [SUCCESS] A=00000000000000FF B=0000000000000001 Cin='0' | Exp: S=0000000000000100 Co='0' | Act: S=0000000000000100 Co='0' | tpd_S=16418 ps tpd_Co=9565 ps
+#    Time: 1020624 ps  Iteration: 0  Instance: /tbadder
+# ** Note: Idx=9 [SUCCESS] A=00000000000000FF B=00000000000000FF Cin='0' | Exp: S=00000000000001FE Co='0' | Act: S=00000000000001FE Co='0' | tpd_S=16418 ps tpd_Co=9565 ps
+#    Time: 1148042 ps  Iteration: 0  Instance: /tbadder
+# ** Note: Idx=10 [SUCCESS] A=00000000000000FF B=00000000000000FF Cin='1' | Exp: S=00000000000001FF Co='0' | Act: S=00000000000001FF Co='0' | tpd_S=16418 ps tpd_Co=9565 ps
+#    Time: 1275460 ps  Iteration: 0  Instance: /tbadder
+# ** Note: Idx=11 [SUCCESS] A=0000000000000080 B=0000000000000080 Cin='0' | Exp: S=0000000000000100 Co='0' | Act: S=0000000000000100 Co='0' | tpd_S=16418 ps tpd_Co=9565 ps
+#    Time: 1402878 ps  Iteration: 0  Instance: /tbadder
+# ** Note: Idx=12 [SUCCESS] A=00000000000000FF B=0000000000000000 Cin='1' | Exp: S=0000000000000100 Co='0' | Act: S=0000000000000100 Co='0' | tpd_S=16418 ps tpd_Co=9565 ps
+#    Time: 1530296 ps  Iteration: 0  Instance: /tbadder
+# ** Note: Idx=13 [SUCCESS] A=00000000000000AA B=0000000000000055 Cin='0' | Exp: S=00000000000000FF Co='0' | Act: S=00000000000000FF Co='0' | tpd_S=16418 ps tpd_Co=9565 ps
+#    Time: 1657714 ps  Iteration: 0  Instance: /tbadder
+# ** Note: Idx=14 [SUCCESS] A=00000000000000AA B=0000000000000055 Cin='1' | Exp: S=0000000000000100 Co='0' | Act: S=0000000000000100 Co='0' | tpd_S=16418 ps tpd_Co=9565 ps
+#    Time: 1785132 ps  Iteration: 0  Instance: /tbadder
+# ** Note: Idx=15 [SUCCESS] A=0000000000000055 B=0000000000000055 Cin='0' | Exp: S=00000000000000AA Co='0' | Act: S=00000000000000AA Co='0' | tpd_S=16418 ps tpd_Co=9565 ps
+#    Time: 1912550 ps  Iteration: 0  Instance: /tbadder
+# ** Note: Idx=16 [SUCCESS] A=000000000000003C B=000000000000004B Cin='0' | Exp: S=0000000000000087 Co='0' | Act: S=0000000000000087 Co='0' | tpd_S=16418 ps tpd_Co=9565 ps
+#    Time: 2039968 ps  Iteration: 0  Instance: /tbadder
+# ** Note: Idx=17 [SUCCESS] A=000000000000007A B=000000000000008B Cin='1' | Exp: S=0000000000000106 Co='0' | Act: S=0000000000000106 Co='0' | tpd_S=16418 ps tpd_Co=9565 ps
+#    Time: 2167386 ps  Iteration: 0  Instance: /tbadder
+# ** Note: Idx=18 [SUCCESS] A=0000000000000012 B=0000000000000034 Cin='0' | Exp: S=0000000000000046 Co='0' | Act: S=0000000000000046 Co='0' | tpd_S=16418 ps tpd_Co=9565 ps
+#    Time: 2294804 ps  Iteration: 0  Instance: /tbadder
+# ** Note: Idx=19 [SUCCESS] A=00000000000000EF B=0000000000000011 Cin='0' | Exp: S=0000000000000100 Co='0' | Act: S=0000000000000100 Co='0' | tpd_S=16418 ps tpd_Co=9565 ps
+#    Time: 2422222 ps  Iteration: 0  Instance: /tbadder
+# ** Note: Idx=20 [SUCCESS] A=0000000000000064 B=0000000000000064 Cin='0' | Exp: S=00000000000000C8 Co='0' | Act: S=00000000000000C8 Co='0' | tpd_S=16418 ps tpd_Co=9565 ps
+#    Time: 2549640 ps  Iteration: 0  Instance: /tbadder
+# ** Note: ====================================================
+#    Time: 2549640 ps  Iteration: 0  Instance: /tbadder
+# ** Note: TBAdder: all 20 vectors processed.
+#    Time: 2549640 ps  Iteration: 0  Instance: /tbadder
+# ** Note: Worst-case tpd_S      = 17698ps
+#    Time: 2549640 ps  Iteration: 0  Instance: /tbadder
+# ** Note: Worst-case tpd_Cout = 9565ps
+#    Time: 2549640 ps  Iteration: 0  Instance: /tbadder
+# ** Note: ====================================================
+#    Time: 2549640 ps  Iteration: 0  Instance: /tbadder
+# 0 ps
+# 2677122 ps

@@ -1,0 +1,103 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity BrentKungTB is
+end entity BrentKungTB;
+
+architecture testbench of BrentKungTB is
+    component BrentKungAdder is
+        generic (N : natural := 8);
+        port (
+            A, B : in  std_logic_vector(N-1 downto 0);
+            Cin  : in  std_logic;
+            S    : out std_logic_vector(N-1 downto 0);
+            Cout : out std_logic
+        );
+    end component;
+
+    signal A, B : std_logic_vector(7 downto 0);
+    signal Cin  : std_logic;
+    signal S    : std_logic_vector(7 downto 0);
+    signal Cout : std_logic;
+
+begin
+    uut: BrentKungAdder
+        generic map(N => 8)
+        port map(
+            A    => A,
+            B    => B,
+            Cin  => Cin,
+            S    => S,
+            Cout => Cout
+        );
+
+    stim: process
+        procedure check(
+            test_num : integer;
+            a_val    : std_logic_vector(7 downto 0);
+            b_val    : std_logic_vector(7 downto 0);
+            cin_val  : std_logic
+        ) is
+            variable expected : std_logic_vector(8 downto 0);
+        begin
+            A   <= a_val;
+            B   <= b_val;
+            Cin <= cin_val;
+            wait for 20 ns;
+            expected := std_logic_vector(
+                unsigned('0' & a_val) + unsigned('0' & b_val) + ("00000000" & cin_val)
+            );
+            if (S = expected(7 downto 0) and Cout = expected(8)) then
+                report "PASS Test " & integer'image(test_num) &
+                       ": A=0x" & to_hstring(a_val) &
+                       " B=0x" & to_hstring(b_val) &
+                       " Cin=" & std_logic'image(cin_val) &
+                       " Got S=0x" & to_hstring(S) &
+                       " Cout=" & std_logic'image(Cout)
+                    severity note;
+            else
+                report "FAIL Test " & integer'image(test_num) &
+                       ": A=0x" & to_hstring(a_val) &
+                       " B=0x" & to_hstring(b_val) &
+                       " Cin=" & std_logic'image(cin_val) &
+                       " Expected S=0x" & to_hstring(expected(7 downto 0)) &
+                       " Cout=" & std_logic'image(expected(8)) &
+                       " Got S=0x" & to_hstring(S) &
+                       " Cout=" & std_logic'image(Cout)
+                    severity error;
+            end if;
+        end procedure;
+
+    begin
+        -- Basic
+        check(1,  x"00", x"00", '0');
+        check(2,  x"00", x"00", '1');
+        check(3,  x"01", x"01", '0');
+        check(4,  x"01", x"01", '1');
+        -- No carry out
+        check(5,  x"0F", x"01", '0');
+        check(6,  x"55", x"2A", '0');
+        check(7,  x"7F", x"00", '1');
+        -- Carry out
+        check(8,  x"FF", x"01", '0');
+        check(9,  x"FF", x"FF", '0');
+        check(10, x"FF", x"FF", '1');
+        check(11, x"80", x"80", '0');
+        check(12, x"FF", x"00", '1');
+        -- Alternating bits
+        check(13, x"AA", x"55", '0');
+        check(14, x"AA", x"55", '1');
+        check(15, x"55", x"55", '0');
+        -- Random
+        check(16, x"3C", x"4B", '0');
+        check(17, x"7A", x"8B", '1');
+        check(18, x"12", x"34", '0');
+        check(19, x"EF", x"11", '0');
+        check(20, x"64", x"64", '0');
+
+        report "All tests complete.";
+        wait;
+    end process;
+
+end architecture testbench;
