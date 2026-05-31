@@ -7,6 +7,7 @@
 class ASTNode {
     public:
         virtual ~ASTNode() = default;
+        virtual void codegen() const = 0;
 };
 
 // ExpressionNode is an ASTNode
@@ -18,7 +19,7 @@ class ConstantNode : public ExpressionNode {
         std::string val;
 
     public:
-        ConstantNode(std::string val) : value(val) {}
+        ConstantNode(std::string val) : val(val) {}
 };
 
 // StatementNode is an ASTNode
