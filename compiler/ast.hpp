@@ -20,6 +20,7 @@ class ConstantNode : public ExpressionNode {
 
     public:
         ConstantNode(std::string val) : val(val) {}
+        void codegen() const override;
 };
 
 // StatementNode is an ASTNode
@@ -32,6 +33,8 @@ class ReturnNode : public StatementNode {
 
     public:
         ReturnNode(std::unique_ptr<ExpressionNode> e) : expression(std::move(e)) {}
+        void codegen() const override;
+
 };
 
 // FunctionNode is an ASTNode
@@ -42,4 +45,5 @@ class FunctionNode : public ASTNode {
 
     public:
         FunctionNode(std::string n, std::vector<std::unique_ptr<StatementNode>> b) : name(n), body(std::move(b)) {}
+        void codegen() const override;
 };
