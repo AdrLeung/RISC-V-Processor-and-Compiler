@@ -2,6 +2,7 @@
 #include "lexer.hpp"
 #include "ast.hpp"
 #include <memory>
+#include <stdexcept>
 
 class Parser {
     private:
@@ -20,4 +21,4 @@ class Parser {
         Parser(Lexer& l);
         std::unique_ptr<ASTNode> parse();
 
-}
+};
