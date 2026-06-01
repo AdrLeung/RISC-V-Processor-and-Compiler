@@ -1,0 +1,58 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity ControlUnit is 
+
+	port(
+		Opcode   : in std_logic_vector(6 downto 0);
+		funct7   : in std_logic_vector(6 downto 0);
+		funct3   : in std_logic_vector(2 downto 0);
+		Zero     : in std_logic;
+		AltB     : in std_logic;
+		AltBu    : in std_logic;
+		PCwr     : out std_logic;
+		InstAddr : out std_logic;
+		Memsize  : out std_logic_vector(2 downto 0);
+		MemWr    : out std_logic;
+		MemRd    : out std_logic;
+		IRWr     : out std_logic;
+		RegWr    : out std_logic;
+		RegInSrc : out std_logic;
+		ExUSrcB  : out std_logic_vector(2 downto 0);
+		ExuSrcA  : out std_logic;
+		FuncClass: out std_logic_vector(1 downto 0);
+		ShiftFn  : out std_logic_vector(1 downto 0);
+		LogicFn  : out std_logic_vector(1 downto 0);
+		PCSrc    : out std_logic_vector(1 downto 0)
+		
+		);
+end entity ControlUnit;
+
+
+archtiecture behaviour of ControlUnit is 
+
+
+begin 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+end architecture;

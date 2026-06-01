@@ -14,7 +14,7 @@ Z1 w1777358010
 Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 16
+!i122 35
 R0
 Z5 8../SourceCode/BLAN.vhd
 Z6 F../SourceCode/BLAN.vhd
@@ -24,9 +24,9 @@ V`3=P`Qb]mAKYOjLSGilM50
 !s100 iZz4KiRR=AAjb7HJ0H?m01
 Z7 OV;C;2020.1;71
 33
-Z8 !s110 1777537649
+Z8 !s110 1778713919
 !i10b 1
-Z9 !s108 1777537649.000000
+Z9 !s108 1778713918.000000
 Z10 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|../SourceCode/BLAN.vhd|
 Z11 !s107 ../SourceCode/BLAN.vhd|
 !i113 1
@@ -37,7 +37,7 @@ R2
 R3
 R4
 DEx4 work 4 blan 0 22 `3=P`Qb]mAKYOjLSGilM50
-!i122 16
+!i122 35
 l18
 L13 53
 V:Ej2?XoW24jhl_eIGc^651
@@ -53,28 +53,28 @@ R11
 R12
 R13
 Ebrentkungadder
-Z14 w1777536729
+Z14 w1778699700
 Z15 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
 Z16 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 WOh:M[al;oVzG5c`<He>D0
 Z17 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
 R3
 R4
 Z18 DPx10 cycloneive 21 cycloneive_components 0 22 zGMDhP>8e@2k@f0e<PY]k2
-!i122 18
+!i122 37
 R0
 Z19 8../SourceCode/simulation/modelsim/RISCVmulti.vho
 Z20 F../SourceCode/simulation/modelsim/RISCVmulti.vho
 l0
 L78 1
-Vbc^_jBXU^ddj:g^eT_@DS0
-!s100 H>GSF5g?kLh@zo<?BQ3lF0
+V8IF2nSMLPXMB3VFRl8llL2
+!s100 U_Ek`5:o<nIcf?<M912@61
 R7
 33
 R8
 !i10b 1
-R9
-Z21 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|../SourceCode/simulation/modelsim/RISCVmulti.vho|
-Z22 !s107 ../SourceCode/simulation/modelsim/RISCVmulti.vho|
+Z21 !s108 1778713919.000000
+Z22 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|../SourceCode/simulation/modelsim/RISCVmulti.vho|
+Z23 !s107 ../SourceCode/simulation/modelsim/RISCVmulti.vho|
 !i113 1
 R12
 R13
@@ -85,8 +85,8 @@ R17
 R3
 R4
 R18
-DEx4 work 14 brentkungadder 0 22 bc^_jBXU^ddj:g^eT_@DS0
-!i122 18
+DEx4 work 14 brentkungadder 0 22 8IF2nSMLPXMB3VFRl8llL2
+!i122 37
 l742
 L285 7927
 V5Zd6XLm<1f@4V=;fa<`KW2
@@ -95,9 +95,9 @@ R7
 33
 R8
 !i10b 1
-R9
 R21
 R22
+R23
 !i113 1
 R12
 R13
@@ -105,25 +105,68 @@ Astructural
 R2
 R3
 R4
-DEx4 work 14 brentkungadder 0 22 MVWa0BO8IZbG8k>7=AGbd1
-!i122 17
-l34
-L16 44
-V2g0ojgl[h=?^Tj:_R6Gmh3
-!s100 Tn:k7nKK]e^bn0Q5?^4[a3
+DEx4 work 14 brentkungadder 0 22 2FTie8;kW3D>40o:g]lEA3
+!i122 36
+l35
+L17 44
+V>CEhn_X=i>VVd<1A<kkSe0
+!s100 KKlLVDbd2DGkY^ka^YS4I1
 R7
 33
 R8
 !i10b 1
-R9
+R21
 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|../SourceCode/BrentKungAdder.vhd|
 !s107 ../SourceCode/BrentKungAdder.vhd|
 !i113 1
 R12
 R13
 F../SourceCode/BrentKungAdder.vhd
-w1777400695
+w1778699675
 8../SourceCode/BrentKungAdder.vhd
+Econtrolunit
+Z24 w1780003030
+R2
+R3
+R4
+!i122 63
+R0
+Z25 8../SourceCode/ControlUnit.vhd
+Z26 F../SourceCode/ControlUnit.vhd
+l0
+L5 1
+V?]`_X5QNFW54a:XXYC:fJ0
+!s100 49S_o5>fG>8M`=kalMDEI1
+R7
+33
+Z27 !s110 1780003587
+!i10b 1
+Z28 !s108 1780003587.000000
+Z29 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|../SourceCode/ControlUnit.vhd|
+Z30 !s107 ../SourceCode/ControlUnit.vhd|
+!i113 1
+R12
+R13
+Abehaviour
+R2
+R3
+R4
+DEx4 work 11 controlunit 0 22 ?]`_X5QNFW54a:XXYC:fJ0
+!i122 63
+l40
+L36 553
+Vz1V;n0TWgi_mjSV?lZmY90
+!s100 OVTZCn]=If57^WoPXhJlY0
+R7
+33
+R27
+!i10b 1
+R28
+R29
+R30
+!i113 1
+R12
+R13
 Ehard_block
 R14
 R15
@@ -132,7 +175,7 @@ R17
 R3
 R4
 R18
-!i122 18
+!i122 37
 R0
 R19
 R20
@@ -144,9 +187,9 @@ R7
 33
 R8
 !i10b 1
-R9
 R21
 R22
+R23
 !i113 1
 R12
 R13
@@ -158,7 +201,7 @@ R3
 R4
 R18
 DEx4 work 10 hard_block 0 22 eXV<@]]_Q5[9Lh?5oE>eW1
-!i122 18
+!i122 37
 l65
 L51 20
 Vm]=Xb9VUfgSiN^i_bN`H]0
@@ -167,54 +210,95 @@ R7
 33
 R8
 !i10b 1
-R9
 R21
 R22
+R23
 !i113 1
 R12
 R13
 Etbadder
-Z23 w1777400531
+Z31 w1778701485
 R2
-Z24 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
+Z32 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
 R3
 R4
-!i122 19
+!i122 38
 R0
-Z25 8./TBBrentKung.vhd
-Z26 F./TBBrentKung.vhd
+Z33 8./TBBrentKung.vhd
+Z34 F./TBBrentKung.vhd
 l0
 L7 1
-V8@OE=8?k>R9za[UFoRX803
-!s100 ing3k=4;9:UnPDH?n4HDR1
+Vc7@9c[_U1FoCTYAgnkM]j0
+!s100 8Po0KaNPe5G7B68?EEX<l3
 R7
 33
 R8
 !i10b 1
-R9
-Z27 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|./TBBrentKung.vhd|
-Z28 !s107 ./TBBrentKung.vhd|
+R21
+Z35 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|./TBBrentKung.vhd|
+Z36 !s107 ./TBBrentKung.vhd|
 !i113 1
 R12
 R13
 Atest
 R2
-R24
+R32
 R3
 R4
-Z29 DEx4 work 7 tbadder 0 22 8@OE=8?k>R9za[UFoRX803
-!i122 19
-l44
-Z30 L20 158
-Z31 V`F2n1nZECT3n4;jIe2<5c1
-Z32 !s100 haaWOE^M;I:>WGJf`];RR2
+DEx4 work 7 tbadder 0 22 c7@9c[_U1FoCTYAgnkM]j0
+!i122 38
+l45
+L21 167
+Vn@^^CgORNiOjb@VGK6GoV1
+!s100 mUOUe;bdc]L>8:9e5:o9[0
 R7
 33
 R8
 !i10b 1
-R9
-R27
-R28
+R21
+R35
+R36
 !i113 1
 R12
+R13
+Etbcontrolunit
+Z37 w1780003546
+R2
+R3
+R4
+!i122 64
+R0
+Z38 8TBControlUnit.vhd
+Z39 FTBControlUnit.vhd
+l0
+L7 1
+VG^FGhFj`SAka[8eaH_cdY3
+!s100 5im;Qi:@W0Fo>DdBk5O_i0
+R7
+32
+Z40 !s110 1780003590
+!i10b 1
+Z41 !s108 1780003590.000000
+Z42 !s90 -reportprogress|300|TBControlUnit.vhd|
+Z43 !s107 TBControlUnit.vhd|
+!i113 1
+R13
+Atestbench
+R2
+R3
+R4
+Z44 DEx4 work 13 tbcontrolunit 0 22 G^FGhFj`SAka[8eaH_cdY3
+!i122 64
+l65
+Z45 L10 115
+Z46 VNZ?[`Ni1KBnQE6W6O6LEO3
+Z47 !s100 Tn:MBUNhN[:eh^`Xhgz]o0
+R7
+32
+R40
+!i10b 1
+R41
+R42
+R43
+!i113 1
 R13

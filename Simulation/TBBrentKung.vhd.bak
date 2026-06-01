@@ -8,6 +8,7 @@ entity TBAdder is
    generic(
        N: natural := 64;
        TestVectorFile: string := "TestVectors/Adder00.tvs";
+       OutputFile:     string := "OutputFiles/AdderOutput.txt";
        PreStimTime : time := 1 ns;
        StableTime: time := 10 ns
 
@@ -42,7 +43,7 @@ architecture Test of TBAdder is
     signal worst_tpd_Cout_ps : integer := 0; -- running worst case for Cout
 
 begin
-   DUT : component Adder
+   DUT : component BrentKungAdder
 	generic map (N => N)
 	port map (
 	    A     => TBA,
@@ -57,6 +58,7 @@ begin
 
  STIM : process
         file     VectorFile : text;
+        file     ResultFile : text;
         variable LineBuffer : line;
         variable FileIndex  : integer := 0;
 
@@ -75,12 +77,14 @@ begin
         variable v_worst_Cout : integer := 0;
 
         variable pass_fail : string(1 to 7);
-
+	
+	variable LineWrite : line;
 
 	begin
 
         -- Open test vector file
         file_open(VectorFile, TestVectorFile, read_mode);
+	file_open(ResultFile, OutputFile, write_mode);
         report "TBAdder: starting simulation. Vectors: " & TestVectorFile
             severity note;
 
@@ -161,6 +165,11 @@ begin
                 worst_tpd_Cout_ps <= v_worst_Cout;
             end if;
 
+	hwrite(LineWrite, TBS);
+        write(LineWrite, string'(" "));
+	write(LineWrite,TBCout);
+	writeline(ResultFile, LineWrite);
+
         end loop; -- end of test vector loop
         report "====================================================" severity note;
         report "TBAdder: all " & integer'image(FileIndex) &
@@ -170,6 +179,7 @@ begin
         report "====================================================" severity note;
 
         file_close(VectorFile);
+	file_close(ResultFile);
         wait; -- halt simulation
 
     end process STIM;

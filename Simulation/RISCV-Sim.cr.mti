@@ -1,14 +1,4 @@
-C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/Simulation/TBBrentKung.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/Simulation/TBBrentKung.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package std_logic_textio
--- Loading package NUMERIC_STD
--- Compiling entity TBAdder
--- Compiling architecture Test of TBAdder
-
-} {} {}} C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/Simulation/BrentKungTB.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/Simulation/BrentKungTB.vhd
+C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/Simulation/BrentKungTB.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/Users/peter/OneDrive/Desktop/RISCV-Multicycle/Simulation/BrentKungTB.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO

@@ -1,0 +1,16 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+entity UpI is 
+
+port(
+
+	rawImmediate : in std_logic_vector(24 downto 0);
+	SextJ          : out std_logic_vector(63 downto 0);
+	SextB          : out std_logic_Vector(63 downto 0);
+	SextI          : out std_logic_Vector(63 downto 0);
+	SextU          : out std_logic_vector(63 downto 0);
+	SextS          : out std_logic_vector(63 downto 0)
+);
+
+end entity UpI;

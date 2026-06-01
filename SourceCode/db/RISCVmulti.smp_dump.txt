@@ -1,0 +1,13 @@
+
+State Machine - |ControlUnit|PresentState
+Name PresentState.memAccessStore PresentState.writeBackLoad PresentState.memAccessLoad PresentState.storeLoadExecute PresentState.JumpExecute PresentState.ArthemeticWriteBack PresentState.ArthemeticExecute PresentState.BranchExecute PresentState.Decode PresentState.Fetch 
+PresentState.Fetch 0 0 0 0 0 0 0 0 0 0 
+PresentState.Decode 0 0 0 0 0 0 0 0 1 1 
+PresentState.BranchExecute 0 0 0 0 0 0 0 1 0 1 
+PresentState.ArthemeticExecute 0 0 0 0 0 0 1 0 0 1 
+PresentState.ArthemeticWriteBack 0 0 0 0 0 1 0 0 0 1 
+PresentState.JumpExecute 0 0 0 0 1 0 0 0 0 1 
+PresentState.storeLoadExecute 0 0 0 1 0 0 0 0 0 1 
+PresentState.memAccessLoad 0 0 1 0 0 0 0 0 0 1 
+PresentState.writeBackLoad 0 1 0 0 0 0 0 0 0 1 
+PresentState.memAccessStore 1 0 0 0 0 0 0 0 0 1 

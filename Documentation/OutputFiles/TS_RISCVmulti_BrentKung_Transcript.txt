@@ -33,7 +33,7 @@
 # -- Compiling entity TBAdder
 # -- Compiling architecture Test of TBAdder
 # vsim -t 1ps -voptargs=""+acc"" -sdftyp "/TBAdder/DUT=../SourceCode/simulation/modelsim/RISCVmulti_vhd.sdo" work.TBAdder 
-# Start time: 01:27:29 on Apr 30,2026
+# Start time: 16:11:59 on May 13,2026
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -48,7 +48,7 @@
 # ** Warning: (vsim-8713) Suspect default binding for component instance 'DUT'.
 # Entity has no generics at all; the component has generic:
 #           N
-#    Time: 0 ps  Iteration: 0  Instance: /tbadder/DUT File: ./TBBrentKung.vhd Line: 54
+#    Time: 0 ps  Iteration: 0  Instance: /tbadder/DUT File: ./TBBrentKung.vhd Line: 55
 # Loading work.hard_block(structure)
 # Loading ieee.std_logic_arith(body)
 # Loading cycloneive.cycloneive_io_obuf(arch)
@@ -56,7 +56,7 @@
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)
 # Loading instances from ../SourceCode/simulation/modelsim/RISCVmulti_vhd.sdo
 # Loading timing data from ../SourceCode/simulation/modelsim/RISCVmulti_vhd.sdo
-# ** Warning: Design size of 43672 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# ** Warning: Design size of 43680 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
 #    Time: 0 ps  Iteration: 0  Instance: /tbadder File: ./TBBrentKung.vhd

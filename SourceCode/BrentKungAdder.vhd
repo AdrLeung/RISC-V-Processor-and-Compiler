@@ -1,18 +1,14 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-
 entity BrentKungAdder is
     generic (N : natural := 64);
     port (
         A, B : in  std_logic_vector(N-1 downto 0);
 		  Cin  : in  std_logic;
         S    : out std_logic_vector(N-1 downto 0);
-		  Cout : out std_logic;
-		  Ovfl : out std_logic;
-		  Zero : out std_logic;
-		  AltB : out std_logic;
-		  AltBu : out std_logic
+		  Cout : out std_logic
+		 -- Ovfl : out std_logic
         
     );
 end entity BrentKungAdder;	
@@ -59,9 +55,5 @@ gen_sum: for i in 0 to N-1 generate
 end generate;
 
 Cout <= Carries(N);
-Ovfl <= Carries(N) xor Carries(N-1);
-Zero <= '1' when unsigned(S) = 0 else '0';
-AltBu <= not Cout;
-AltB <= 	Ovfl xor S(63);
-
+--Ovfl <= Carries(N) xor Carries(N-1);
 end architecture;
